@@ -1,0 +1,35 @@
+{
+    "name": "insanetlabs/crypto-evaluator",
+    "description": "Plugin for evaluating crypto currencies charts",
+    "license": "MIT",
+    "authors": [{
+        "name": "Iwan van Zijderveld",
+        "email": "iwanzijderveld@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2.5",
+        "guzzlehttp/guzzle": "^6.2",
+        "laravel/framework": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Insanetlabs\\CryptoEvaluator\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Insanetlabs\\CryptoEvaluator\\CryptoEvaluatorServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan migrate"
+        ],
+        "post-update-cmd": [
+            "php artisan migrate"
+        ]
+    }
+}
