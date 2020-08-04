@@ -9,9 +9,8 @@ namespace Insanetlabs\CryptoEvaluator\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Coin extends Model
+class CoinChange extends Model
 {
-
     /**
      * The attributes that should be mutated to dates.
      *
@@ -29,7 +28,7 @@ class Coin extends Model
         'created_at', 'updated_at'
     );
 
-    public function coinChanges() {
-        return $this->hasMany(CoinChange::class);
+    public function coin() {
+        return $this->belongsTo(Coin::class);
     }
 }

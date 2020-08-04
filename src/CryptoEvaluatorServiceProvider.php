@@ -7,9 +7,12 @@ namespace Insanetlabs\CryptoEvaluator;
  * @package Insanetlabs\CryptoEvaluator
  * 
  */
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Insanetlabs\CryptoEvaluator\Jobs\FetchCMCDataJob;
+use Insanetlabs\CryptoEvaluator\Services\CoinMarketCapService;
 use Insanetlabs\CryptoEvaluator\ViewComposers\CryptoEvaluatorViewComposer;
 
 class CryptoEvaluatorServiceProvider extends ServiceProvider
@@ -59,8 +62,16 @@ class CryptoEvaluatorServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/providers.php', 'auth.providers');
         $this->mergeConfigFrom(__DIR__ . '/../config/passwords.php', 'auth.passwords');
 
+        $this->app->bind(CoinMarketCapService::class, function() {
+            return new CoinMarketCapService();
+        });
 
         View::composer('crypto-evaluator::layouts.app', CryptoEvaluatorViewComposer::class);
+        
+        $this->app->booted(function () {
+            $schedule = app(Schedule::class);
+            $schedule->job(new FetchCMCDataJob(app()->make(CoinMarketCapService::class)))->hourly();
+        });
     }
 }
 ?>

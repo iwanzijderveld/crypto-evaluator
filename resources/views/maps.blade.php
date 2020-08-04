@@ -1,7 +1,7 @@
-@extends('intellitrace::layouts.app');
+@extends('crypto-evaluator::layouts.app');
 
 @section('content')
-    <h2>{{ __('intellitrace::tracing.dashboard') }}</h2>
+    <h2>{{ __('crypto-evaluator::tracing.dashboard') }}</h2>
     <div id="map-canvas" class="google-maps-holder">
     </div>
 @endsection
@@ -11,8 +11,8 @@
 
 <script type="text/javascript">
 
-    var markers = {!! $visitors !!}
-
+    {{-- var markers = []{!! $visitors !!} --}}
+var markers = [];
     function initMap() {
       
       var mapOptions = {

@@ -13,6 +13,8 @@ use Insanetlabs\CryptoEvaluator\Notifications\ResetPasswordNotification;
 
 class CryptoEvaluatorUser extends Authenticatable
 {
+    protected $table = "crypto_evaluator_users";
+
     use Notifiable;
 
     protected $fillable = ['name', 'email', 'password'];

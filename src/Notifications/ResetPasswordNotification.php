@@ -50,7 +50,7 @@ class ResetPasswordNotification extends Notification
         return (new MailMessage)
             ->subject("Reset your password")
             ->line("Hey, did you forget your password? Click the button to reset it.")
-            ->action('Reset Password', url('intellitrace/reset', $this->token))
+            ->action('Reset Password', url('crypto-evaluator/reset', $this->token))
             ->line('Thankyou for being a friend');
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registered to IntelliTrace</title>
+    <title>Registered to crypto-evaluator</title>
 </head>
 
 <body>

@@ -1,17 +1,17 @@
-@extends('intellitrace::layouts.app')
+@extends('crypto-evaluator::layouts.app')
 @section('content')
-<h2>{{ __('intellitrace::tracing.overview') }}</h2>
+<h2>{{ __('crypto-evaluator::tracing.overview') }}</h2>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>#</th>
-                <th>{{ __('intellitrace::tracing.ip') }}</th>
-                <th>{{ __('intellitrace::tracing.isp') }}</th>
-                <th>{{ __('intellitrace::tracing.city') }}</th>
-                <th>{{ __('intellitrace::tracing.organisation') }}</th>
-                <th>{{ __('intellitrace::tracing.postalcode') }}</th>
-                <th>{{ __('intellitrace::tracing.timestamp') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.ip') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.isp') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.city') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.organisation') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.postalcode') }}</th>
+                <th>{{ __('crypto-evaluator::tracing.timestamp') }}</th>
             </tr>
         </thead>
         <tbody>

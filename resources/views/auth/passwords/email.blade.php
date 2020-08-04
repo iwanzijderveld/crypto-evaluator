@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ url('intellitrace/email') }}">
+                    <form method="POST" action="{{ url('crypto-evaluator/email') }}">
                         @csrf
 
                         <div class="form-group row">
